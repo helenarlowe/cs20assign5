@@ -76,7 +76,7 @@
 
                     // create categories in dropdown
                     categories.forEach(category => {
-                        $("#category-select").append(`<option value="${category}">${category}</option>`);
+                        $("#category-to-select").append(`<option value="${category}">${category}</option>`);
                     });
 
                 }).fail(function() {
@@ -85,7 +85,7 @@
 
                 // code to filter products according to category selected in dropdown
                 $("#filterProducts").click(function() {
-                    let selectedCategory = $("#category-select").val();
+                    let selectedCategory = $("#category-to-select").val();
                     let output = "";
 
                     if (selectedCategory) {

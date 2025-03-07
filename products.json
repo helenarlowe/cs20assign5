@@ -9,6 +9,30 @@
         ]
     },
     {
+        "name": "Claw Clip",
+        "description": "Pearlescent, Large Claw Clip",
+        "price": "$10",
+        "categories": [
+            "Accessories"
+        ]
+    },
+    {
+        "name": "Smiski",
+        "description": "Blind Box Smiski Hippers",
+        "price": "$14",
+        "categories": [
+            "Toys"
+        ]
+    },
+    {
+        "name": "Labubu",
+        "description": "Blind Box Labubu Have a Seat",
+        "price": "$25",
+        "categories": [
+            "Toys"
+        ]
+    },
+    {
         "name": "Leather Purse",
         "description": "Handmade genuine leather purse",
         "price": "$70",
@@ -47,7 +71,8 @@
         "description": "Tracks fitness, heart rate, and notifications",
         "price": "$200",
         "categories": [
-            "Electronics"
+            "Electronics",
+            "Accessories"
         ]
     },
     {
