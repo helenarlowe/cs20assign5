@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name='viewport' content="width=device-width, initial-scale=1" charset="UTF-8">
+        <title>JSON Product List</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" 
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" 
+            crossorigin="anonymous"></script>
+
+        <style>
+            body, html {
+                font-size: 20px;
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                text-align: center;
+                margin: 20px;
+            }
+            button {
+                padding: 10px 15px;
+                background-color: pink;
+                color: white;
+                border: none;
+                cursor: pointer;
+                font-size: 18px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            button:hover {
+                background-color: purple;
+            }
+            #json-data {
+                white-space: pre-wrap;
+                background: #fff;
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin: 20px auto;
+                width: 80%;
+                max-width: 800px;
+            }
+            #json-list {
+                width: 80%;
+                margin: 20px auto;
+                max-width: 800px;
+                text-align: left;
+            }
+            .product {
+                background: white;
+                padding: 15px;
+                margin-bottom: 15px;
+                border-radius: 5px;
+            }
+            .product h3 {
+                margin: 0;
+                color: pink;
+            }
+            .product p {
+                margin: 5px 0;
+                color: #555;
+            }
+            .price {
+                font-weight: bold;
+            }
+            .categories {
+                font-style: italic;
+                color: #6c757d;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Product List</h1>
+        <!-- button to load the products on page -->
+        <button id="loadProducts">Load Products</button>
+
+        <script>
+            // when button is clicked, data from products.json read
+            $("#loadProducts").click(function() {
+                $.get("https://helenarlowe.github.io/cs20assign5/products.json", 
+                    function(data) {
+                        
+                        console.log('Raw Data:', data);
+
+                        let jsonString = JSON.stringify(data);
+                        document.getElementById('json-data').innerHTML = jsonString;
+
+                        console.log('string data\n' + jsonString)
+
+                        // make HTML for product list
+                        let str = "";
+                        data.forEach(function(product) { 
+                            str += "<div class='product'>" +
+                                "<h3>" + product.name + "</h3>" +
+                                "<p>" + product.description + "</p>" +
+                                "<p class='price'>Price: " + product.price + "</p>" +
+                                "<p class='categories'>Categories: " + product.categories.join(", ") + "</p>" +
+                                "</div>";
+                        });
+
+                        // display json object on page
+                        document.getElementById("json-list").innerHTML = str;
+                    })
+
+            });
+            
+        </script>
+        <!-- <h2>Raw JSON Data:</h2>
+        <div id="json-data">&nbsp;</div> -->
+
+        <!-- div section with id of result -->
+        <h2>Formatted Product List:</h2>
+        <div id="json-list">&nbsp;</div>
+
+    </body>
+</html>

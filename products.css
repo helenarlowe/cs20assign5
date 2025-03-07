@@ -1,0 +1,70 @@
+@charset "utf-8";
+products {
+    width: 60%; 
+    margin: 100px auto 0 auto; 
+    border: .5px solid black; 
+    min-height: 300px; 
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+product {
+    display: block; 
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+product name {
+    display: inline-block; 
+    font-size: 36px; 
+    text-transform: capitalize; 
+    color: pink; 
+    width: 200px;
+    font-weight: bold;
+}
+
+product description {
+    display: inline-block; 
+    font-size: 30px;
+    color: #555;
+    font-style: italic;
+}
+
+product price {
+    font-size: 28px; 
+    display: inline-block;
+    font-weight: bold;
+}
+
+product price:before {
+    content: "$"; 
+    font-weight: bold;
+}
+
+product categories:before {
+    content: "Categories: "; 
+    font-size: 22px; 
+    display: block;
+    font-weight: bold;
+    color: #333;
+}
+
+product categories {
+    display: block;
+    margin-top: 10px;
+}
+
+product categories category {
+    list-style-type: disc; 
+    list-style-position: inside; 
+    display: list-item;
+    padding: 2px 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+    background-color: violet;
+    color: white;
+    font-size: 18px;
+    display: inline-block;
+}

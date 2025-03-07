@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name='viewport' content="width=device-width, initial-scale=1" charset="UTF-8">
+        <title>Filter Products by Category</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+        <style>
+            body, html {
+                font-size: 20px;
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                text-align: center;
+                margin: 20px;
+            }
+            button {
+                padding: 10px 15px;
+                background-color: pink;
+                color: white;
+                border: none;
+                cursor: pointer;
+                font-size: 18px;
+                margin: 10px;
+                border-radius: 5px;
+            }
+            button:hover {
+                background-color: purple;
+            }
+            select {
+                font-size: 18px;
+                padding: 5px;
+                margin: 10px;
+            }
+            #filtered-products {
+                width: 60%;
+                margin: 20px auto;
+                background: white;
+                padding: 15px;
+                border-radius: 5px;
+            }
+            .product-name {
+                font-size: 22px;
+                color: #007bff;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Filter Products by Category</h2>
+
+        <label for="category-to-select">Choose a category:</label>
+        <!-- dropdown -->
+        <select id="category-to-select">
+            <option value=""> -- Select a Category -- </option>
+        </select>
+
+        <!-- filter button -->
+        <button id="filterProducts">Filter</button>
+
+        <h3>Matching Products:</h3>
+        <div id="filtered-products"></div>
+
+        <script>
+            $(document).ready(function() {
+                let allProducts = [];
+
+                $.get("https://helenarlowe.github.io/cs20assign5/products.json", function(data) {
+                    allProducts = data;
+
+                    let categories = new Set(); // sets are useful to avoid duplicates
+                    
+                    data.forEach(product => {
+                        product.categories.forEach(category => categories.add(category));
+                    });
+
+                    // create categories in dropdown
+                    categories.forEach(category => {
+                        $("#category-select").append(`<option value="${category}">${category}</option>`);
+                    });
+
+                }).fail(function() {
+                    alert("Error loading products.json");
+                });
+
+                // code to filter products according to category selected in dropdown
+                $("#filterProducts").click(function() {
+                    let selectedCategory = $("#category-select").val();
+                    let output = "";
+
+                    if (selectedCategory) {
+                        let filtered = allProducts.filter(product => product.categories.includes(selectedCategory));
+                        // display only product names that match filtered category
+                        filtered.forEach(product => {
+                            output += `<p class="product-name">${product.name}</p>`;
+                        });
+                    } else {
+                        output = "<p>Please select a category.</p>";
+                    }
+
+                    $("#filtered-products").html(output);
+                });
+            });
+        </script>
+    </body>
+</html>
