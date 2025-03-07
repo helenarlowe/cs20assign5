@@ -1,72 +1,70 @@
-{
-    "products": [
-        {
-            "name": "Vintage T-shirt",
-            "description": "Miata T-shirt",
-            "price": "$35",
-            "categories": [
-                "Clothing",
-                "Vintage"
-            ]
-        },
-        {
-            "name": "Leather Purse",
-            "description": "Handmade genuine leather purse",
-            "price": "$70",
-            "categories": [
-                "Accessories",
-                "Handmade"
-            ]
-        },
-        {
-            "name": "Noise Cancelling Headphones",
-            "description": "Over-ear, high-quality sound with ANC",
-            "price": "$150",
-            "categories": [
-                "Electronics"
-            ]
-        },
-        {
-            "name": "Yoga Mat",
-            "description": "non-slip yoga mat",
-            "price": "$40",
-            "categories": [
-                "Fitness"
-            ]
-        },
-        {
-            "name": "Hiking Backpack",
-            "description": "Water-resistant with multiple compartments",
-            "price": "$80",
-            "categories": [
-                "Outdoor",
-                "Accessories"
-            ]
-        },
-        {
-            "name": "Smartwatch",
-            "description": "Tracks fitness, heart rate, and notifications",
-            "price": "$200",
-            "categories": [
-                "Electronics"
-            ]
-        },
-        {
-            "name": "Running Shoes",
-            "description": "Lightweight and comfortable for long runs",
-            "price": "$120",
-            "categories": [
-                "Fitness",
-                "Clothing"
-            ]
-        },
-        {
-            "name": "Bluetooth Speaker",
-            "description": "Portable and waterproof with deep bass",
-            "price": "$90",
-            "categories": [
-                "Electronics"
-            ]
-        }
-    ]
-}
+[
+    {
+        "name": "Vintage T-shirt",
+        "description": "Miata T-shirt",
+        "price": "$35",
+        "categories": [
+            "Clothing",
+            "Vintage"
+        ]
+    },
+    {
+        "name": "Leather Purse",
+        "description": "Handmade genuine leather purse",
+        "price": "$70",
+        "categories": [
+            "Accessories",
+            "Handmade"
+        ]
+    },
+    {
+        "name": "Noise Cancelling Headphones",
+        "description": "Over-ear, high-quality sound with ANC",
+        "price": "$150",
+        "categories": [
+            "Electronics"
+        ]
+    },
+    {
+        "name": "Yoga Mat",
+        "description": "non-slip yoga mat",
+        "price": "$40",
+        "categories": [
+            "Fitness"
+        ]
+    },
+    {
+        "name": "Hiking Backpack",
+        "description": "Water-resistant with multiple compartments",
+        "price": "$80",
+        "categories": [
+            "Outdoor",
+            "Accessories"
+        ]
+    },
+    {
+        "name": "Smartwatch",
+        "description": "Tracks fitness, heart rate, and notifications",
+        "price": "$200",
+        "categories": [
+            "Electronics"
+        ]
+    },
+    {
+        "name": "Running Shoes",
+        "description": "Lightweight and comfortable for long runs",
+        "price": "$120",
+        "categories": [
+            "Fitness",
+            "Clothing"
+        ]
+    },
+    {
+        "name": "Bluetooth Speaker",
+        "description": "Portable and waterproof with deep bass",
+        "price": "$90",
+        "categories": [
+            "Electronics"
+        ]
+    }
+]
